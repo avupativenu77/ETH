@@ -1,10 +1,11 @@
 
+{{ config(tags=['stablecoin'])}}
 
 select
 t.date,
 t.token_address,
 s.type,
-s.symbol,
+s.symbol, 
 --sum(value/1e6) as total_usd_value
 {{ conversion('t.value', 's.decimals')}} as total_usd_value
 

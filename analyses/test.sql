@@ -1,8 +1,8 @@
+--{{ audit_helper.compare_relations(source('eth', 'contracts'))}}
+--{{ target.name}}
 
-select
+--{{ target.database}}
 
-{{ dbt_utils.star(ref("stg_transactions_enriched"), except=['new_field'], quote_identifiers= false, prefix='STG_')}}
+--{{ target.schema}}
 
-from
-{{ ref("stg_transactions_enriched")}}
-
+{{ codegen.generate_model_yaml(['stablecoin_activity_per_day'])}}
