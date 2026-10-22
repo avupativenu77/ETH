@@ -11,7 +11,7 @@ receipt_contract_address,
 input
 
 from
-{{ source ('eth', 'transactions')}}
+{{ source ('eth', 'transactions')}} 
 
 {% if is_incremental() %}
 
