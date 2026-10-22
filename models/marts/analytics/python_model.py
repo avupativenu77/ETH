@@ -9,7 +9,7 @@ def model(dbt, session):
 
     dbt.config(packages=["holidays","pandas"])
 
-    my_sql_model_df = dbt.ref("stablecoin_activity_per_day")
+    my_sql_model_df = dbt.ref("stablecoin_activity_per_day", v=1)
     
     my_sql_model_df = my_sql_model_df.to_pandas()
 
